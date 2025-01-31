@@ -9,6 +9,11 @@ export default {
   printStr(text, cutMode) {
     Pax.printStr(text, cutMode === undefined ? 0 : cutMode);
   },
+
+  printBitmap(base64, cutMode) {
+    Pax.printBitmap(base64, cutMode === undefined ? 0 : cutMode);
+  },
+
   openDrawer() {
     return Pax.openDrawer();
   },

@@ -60,4 +60,19 @@ public class RNPaxLibraryModule extends ReactContextBaseJavaModule {
             promise.reject("Error "+ result, "The cash drawer cannot be opened.");
         }
     }
+
+    @ReactMethod
+    public void printBitmap(String base64, Double cutMode) {
+        try {
+            byte[] decodedString = Base64.decode(base64, Base64.DEFAULT);
+            Bitmap bitmap = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
+
+            printer.init();
+            printer.printBitmap(bitmap);
+            printer.start();
+            printer.cutPaper(cutMode.intValue());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }
