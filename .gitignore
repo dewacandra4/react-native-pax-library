@@ -43,4 +43,13 @@ local.properties
 buck-out/
 \.buckd/
 *.keystore
-      
+
+
+# Yarn
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
